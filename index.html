@@ -5,86 +5,377 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<style>
-		center {
+		body{
 			background-color: slateblue;
-			}
+		}
 		.p1 {
 			font-family: "Gill Sans Extrabold", sans-serif;
-			}
+		}
+    .avatar-effect {
+       border-radius: 90%;
+       overflow: hidden;
+   }
+       * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .waviy {
+      position: top;
+    }
+    .waviy span {
+      position: relative;
+      display: inline-block;
+      font-size: 40px;
+      color: #fff;
+      text-transform: uppercase;
+      animation: flip 7s infinite;
+      animation-delay: calc(.2s * var(--i))
+    }
+    @keyframes flip {
+      0%,80% {
+        transform: rotateY(360deg)
+      }
+    }
+
 	</style>
 </head>
 <body>
-        <center>
-				<h2><u>Photo</u> <u>Album</u></h2>
-				<p><strong>Indian Cricket Team</strong></p>
-			  </center>
-        <div class="container">
+    <center>
+      <div class="waviy">
+       <span style="--i:1">P</span>
+       <span style="--i:2">h</span>
+       <span style="--i:3">o</span>
+       <span style="--i:4">t</span>
+       <span style="--i:5">o</span>
+       <span style="--i:6">-</span>
+       <span style="--i:7">A</span>
+       <span style="--i:8">l</span>
+       <span style="--i:9">b</span>
+       <span style="--i:10">u</span>
+       <span style="--i:11">m</span>
+     </div>
+     <br>
+        <img style="width:70px;height:70px" src="bcci.jpg"></img>
+        &nbsp;
+        <h5 style="color:Blue;";><strong>Indian Cricket Team</strong></h5>
+    </center>
+    <div class="container">
+        <!-- Dropdown for image selection -->
         <div class="row">
-            <!-- Mobile view (1 image) -->
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img src="images\rohit.jpg" class="embed-responsive-item">
-            </div>
-          </div>
-          <!-- Breakpoint 1 (2 images) -->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img src="images\gill.jpg" class="embed-responsive-item">
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img src="images\virat.jpg" class="embed-responsive-item">
-            </div>
-          </div>
-          <!-- Breakpoint 2 (3 images) -->
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img src="images\surya.jpg" class="embed-responsive-item">
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img src="images\kl.jpg" class="embed-responsive-item">
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
-            <div class="embed-responsive embed-responsive-1by1">
-              <img src="images\hardik.jpg" class="embed-responsive-item">
-            </div>
-          </div>
-            <!-- Breakpoint 3 (4 images) -->
+            <!-- Display all images -->
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
                 <div class="embed-responsive embed-responsive-1by1">
-                  <img src="images\pant.jpg" class="embed-responsive-item">
+                    <img id="image-1" src="rohit.jpg" class="embed-responsive-item" data-brightness="1">
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
                 <div class="embed-responsive embed-responsive-1by1">
-                  <img src="images\jadeja.jpg" class="embed-responsive-item">
+                    <img id="image-2" src="gill.jpg" class="embed-responsive-item" data-brightness="1">
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
                 <div class="embed-responsive embed-responsive-1by1">
-                  <img src="images\ashwin.jpg" class="embed-responsive-item">
+                    <img id="image-3" src="virat.jpg" class="embed-responsive-item" data-brightness="1">
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
                 <div class="embed-responsive embed-responsive-1by1">
-                  <img src="images\shami.jpg" class="embed-responsive-item">
+                    <img id="image-4" src="surya.jpg" class="embed-responsive-item" data-brightness="1">
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
                 <div class="embed-responsive embed-responsive-1by1">
-                  <img src="images\iyer.jpg" class="embed-responsive-item">
+                    <img id="image-5" src="kl.jpg" class="embed-responsive-item" data-brightness="1">
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
                 <div class="embed-responsive embed-responsive-1by1">
-                  <img src="images\bumrah.jpg" class="embed-responsive-item">
+                    <img id="image-6" src="hardik.jpg" class="embed-responsive-item" data-brightness="1">
                 </div>
             </div>
-      </div>
-	</div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img id="image-7" src="pant.jpg" class="embed-responsive-item" data-brightness="1">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img id="image-8" src="jadeja.jpg" class="embed-responsive-item" data-brightness="1">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img id="image-9" src="ashwin.jpg" class="embed-responsive-item" data-brightness="1">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img id="image-10" src="shami.jpg" class="embed-responsive-item" data-brightness="1">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img id="image-11" src="iyer.jpg" class="embed-responsive-item" data-brightness="1">
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 15px;">
+                <div class="embed-responsive embed-responsive-1by1">
+                    <img id="image-12" src="bumrah.jpg" class="embed-responsive-item" data-brightness="1">
+                </div>
+            </div>
+
+
+                <div class="col-12">
+                    <p style="color:white">Select an Image:</p>
+                    <select id="image-select" class="form-control">
+                        <option value="rohit.jpg">Rohit Sharma</option>
+                        <option value="gill.jpg">Shubman Gill</option>
+                        <option value="virat.jpg">Virat Kohli</option>
+                        <option value="surya.jpg">Suryakumar Yadav</option>
+                        <option value="kl.jpg">KL Rahul</option>
+                        <option value="hardik.jpg">Hardik Pandya</option>
+                        <option value="pant.jpg">Rishabh Pant</option>
+                        <option value="jadeja.jpg">Ravindra Jadeja</option>
+                        <option value="ashwin.jpg">Ravichandran Ashwin</option>
+                        <option value="shami.jpg">Mohammed Shami</option>
+                        <option value="iyer.jpg">Shreyas Iyer</option>
+                        <option value="bumrah.jpg">Jasprit Bumrah</option>
+                    </select>
+                </div>
+            &nbsp;
+        </div>
+        <div id="qrcode"></div>
+        <div class="row">
+            <!-- Button for increasing brightness -->
+            <div class="col-16">
+                <button id="increase-brightness" class="btn btn-primary btn-sm" >Increase Brightness</button>
+                <button id="db" class="btn btn-primary btn-sm">Decrase Brightness</button>
+                <button id="mr" class="btn btn-primary btn-sm">Make Reddish</button>
+                <button id="mb" class="btn btn-primary btn-sm">Make Blueish</button>
+                <button id="mg" class="btn btn-primary btn-sm">Make Greenish</button>
+                <button id="duplicateButton" class="btn btn-primary btn-sm">Duplicate Image</button>
+                <button id="reduceResolutionButton" class="btn btn-primary btn-sm">Reduce Resolution</button>
+                <button id="createAvatar" class="btn btn-primary btn-sm">Create Avatar</button>
+                <button id="thumbnail" class="btn btn-primary btn-sm">Create Thumbnail</button>
+                <hr>
+                <button id="gray" class="btn btn-primary btn-sm">Convert to Gray</button>
+                <button id="qr" class="btn btn-primary btn-sm">Generate QR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2c968d0755.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+
+    <script>
+        // Get the dropdown element and increase brightness button
+        const imageSelect = document.getElementById('image-select');
+        const increaseBrightnessBtn = document.getElementById('increase-brightness');
+        const decreaseBrightnessBtn = document.getElementById('db');
+        const makeRedButton=document.getElementById('mr');
+        const makeBlueButton=document.getElementById('mb');
+        const makeGreenButton=document.getElementById('mg');
+        const reduceResolutionButton = document.getElementById("reduceResolutionButton");
+        const duplicateButton = document.getElementById("duplicateButton");
+        const createAvatarButton = document.getElementById("createAvatar");
+        const createThumbnailsButton=document.getElementById("thumbnail");
+        const convertToGrayButton=document.getElementById("gray");
+        const generateQRCodeButton=document.getElementById("qr");
+
+generateQRCodeButton.addEventListener('click', function() {
+    const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+    const selectedImageUrl = selectedOption.value;
+
+    // Create a new QRCode object
+    const qrCode = new QRCode(document.getElementById("qrcode"), {
+        text: selectedImageUrl,
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+});
+
+
+        // Event listener for image selection dropdown
+        imageSelect.addEventListener('change', function() {
+            const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+            const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+            const selectedImageUrl = selectedOption.value;
+            selectedImage.src = selectedImageUrl;
+        });
+
+        // Event listener for increase brightness button
+        increaseBrightnessBtn.addEventListener('click', function() {
+            const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+            const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+            const currentBrightness = parseFloat(selectedImage.getAttribute('data-brightness'));
+            const newBrightness = currentBrightness + 0.2;
+            selectedImage.style.filter = `brightness(${newBrightness})`;
+            selectedImage.setAttribute('data-brightness', newBrightness);
+        });
+
+        decreaseBrightnessBtn.addEventListener('click', function() {
+            const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+            const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+            const currentBrightness = parseFloat(selectedImage.getAttribute('data-brightness'));
+            const newBrightness = currentBrightness - 0.2;
+            selectedImage.style.filter = `brightness(${newBrightness})`;
+            selectedImage.setAttribute('data-brightness', newBrightness);
+        });
+
+
+        makeRedButton.addEventListener("click", function() {
+            // Perform the make reddish operation
+            const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+            const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+            if (selectedImage) {
+              selectedImage.style.filter = "hue-rotate(0deg)"; // Reset filter
+              selectedImage.style.filter += "hue-rotate(60deg)"; // Apply reddish hue rotation
+            }
+          });
+
+
+         makeBlueButton.addEventListener("click", function () {
+           // Perform the make blueish operation
+           const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+           const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+           if (selectedImage) {
+             selectedImage.style.filter = "hue-rotate(240deg)";
+           }
+         });
+
+         makeGreenButton.addEventListener("click", function () {
+           // Perform the make greenish operation
+           const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+           const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+           if (selectedImage) {
+             selectedImage.style.filter = "hue-rotate(120deg)";
+           }
+         });
+
+         reduceResolutionButton.addEventListener("click", function () {
+           // Perform the reduce resolution operation
+           const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+           const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+           if (selectedImage) {
+             selectedImage.style.filter = "blur(2px)";
+           }
+         });
+
+           convertToGrayButton.addEventListener("click", function () {
+             // Perform the convert to gray operation
+             const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+             const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+             if (selectedImage) {
+               selectedImage.style.filter = "grayscale(100%)";
+             }
+           });
+
+           duplicateButton.addEventListener('click', function() {
+               const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+               const selectedImage = document.getElementById(`image-${selectedOption.index + 1}`);
+               const selectedImageUrl = selectedOption.value;
+
+               // Clone the selected image element
+               const clonedImage = selectedImage.cloneNode(true);
+               clonedImage.setAttribute('data-brightness', 1);
+
+               // Get the parent container of the selected image
+               const selectedImageContainer = selectedImage.parentNode.parentNode;
+
+               // Create a new column div for the cloned image
+               const newColDiv = document.createElement('div');
+               newColDiv.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
+               newColDiv.style.marginBottom = '15px';
+               const newEmbedDiv = document.createElement('div');
+               newEmbedDiv.className = 'embed-responsive embed-responsive-1by1';
+               const newImg = document.createElement('img');
+               newImg.className = 'embed-responsive-item';
+               newImg.src = selectedImageUrl;
+               newImg.setAttribute('data-brightness', 1);
+               newEmbedDiv.appendChild(newImg);
+               newColDiv.appendChild(newEmbedDiv);
+
+               // Insert the new column after the selected image's container
+               selectedImageContainer.parentNode.insertBefore(newColDiv, selectedImageContainer.nextSibling);
+           });
+
+          createAvatarButton.addEventListener('click', function() {
+              const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+              const selectedImageSrc = selectedOption.value;
+
+              // Create the new avatar image element
+              const newAvatarImage = document.createElement('img');
+              newAvatarImage.src = selectedImageSrc;
+              newAvatarImage.className = 'avatar-effect';
+              newAvatarImage.style.width = '100px';
+              newAvatarImage.style.height = '100px';
+              newAvatarImage.style.borderRadius='50%'
+              // Get the images container
+              const imagesContainer = document.querySelector('.row');
+
+              // Create a new column for the avatar image
+              const newColumn = document.createElement('div');
+              newColumn.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
+              newColumn.style.marginBottom = '15px';
+
+              // Append the avatar image to the new column
+              newColumn.appendChild(newAvatarImage);
+
+              // Insert the new column after the last 12 images
+              const existingImages = imagesContainer.querySelectorAll('.col-12.col-sm-6.col-md-4.col-lg-3');
+              const lastImageIndex = Math.min(existingImages.length, 12);
+              const lastImage = existingImages[lastImageIndex - 1];
+              imagesContainer.insertBefore(newColumn, lastImage.nextSibling);
+          });
+
+
+     createThumbnailsButton.addEventListener('click', function() {
+        const selectedOption = imageSelect.options[imageSelect.selectedIndex];
+        const selectedImageSrc = selectedOption.value;
+
+        if (selectedImageSrc) {
+            // Create the thumbnail image element
+            const thumbnailImage = document.createElement('img');
+            thumbnailImage.src = selectedImageSrc;
+            thumbnailImage.className = 'thumbnail-effect';
+            thumbnailImage.style.width = '100px';
+            thumbnailImage.style.height = '100px';
+            // Get the images container
+            const imagesContainer = document.querySelector('.row');
+
+            // Create a new row for the thumbnail image
+            const newRow = document.createElement('div');
+            newRow.className = 'row';
+
+            // Create a new column for the thumbnail image
+            const newColumn = document.createElement('div');
+            newColumn.className = 'col-12 col-sm-6 col-md-4 col-lg-3';
+            newColumn.style.marginBottom = '15px';
+
+            // Append the thumbnail image to the new column
+            newColumn.appendChild(thumbnailImage);
+
+            // Append the new column to the new row
+            newRow.appendChild(newColumn);
+
+            // Insert the new row below the existing images
+            imagesContainer.parentNode.insertBefore(newRow, imagesContainer.nextSibling);
+        }
+    });
+
+    </script>
 </body>
 </html>
